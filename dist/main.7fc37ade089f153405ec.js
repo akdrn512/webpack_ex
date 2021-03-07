@@ -1,1 +1,0 @@
-(()=>{"use strict";const e=document.querySelector(".btn-change"),o=document.querySelector(".card-title");e.addEventListener("click",(function(){var e;e="pink",o.style.backgroundColor=e})),console.log("Hello World")})();
