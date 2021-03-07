@@ -17,14 +17,14 @@ module.exports = merge(common, {
         minimizer: [
             new OptimizeCssAssetsPlugin(),
             new TerserPlugin(),
-            /*new HtmlWebpackPlugin({
+            new HtmlWebpackPlugin({
                 template: "./src/index.html",
                 minify: {
                     removeAttributeQuotes: true,
                     collapseWhitespace: true,
                     removeComments: true
                 }
-            })*/
+            })
         ]
     },
     plugins: [
@@ -32,19 +32,21 @@ module.exports = merge(common, {
             filename: "[name].[contenthash].css"
         }),
         new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin({
+        /*new HtmlWebpackPlugin({
             template: "./src/index.html",
-        })
+        })*/
     ],
     module: {
         rules: [
             {
                 test: /\.(scss|css)$/,
                 use: [
-                    MiniCssExtractPlugin.loader,
+                    {
+                        loader : MiniCssExtractPlugin.loader,
+                    },
                     "css-loader",
                     "sass-loader",
-                ]
+                ],
             },
         ]
     },

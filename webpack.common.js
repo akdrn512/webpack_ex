@@ -27,4 +27,11 @@ module.exports = {
             }
         ]
     },
+    resolve: {
+        alias: {
+            "@js" : path.join(__dirname, "/src/asset/js"),
+            "@css" : path.join(__dirname, "/src/asset/css"),
+            "@images" : path.join(__dirname, "/src/asset/images"),
+        },
+    }
 };
